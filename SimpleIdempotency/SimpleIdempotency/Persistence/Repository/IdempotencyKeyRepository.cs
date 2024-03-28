@@ -51,7 +51,8 @@ internal sealed class IdempotencyKeyRepository : IIdempotencyKeyRepository
         var now = DateTime.UtcNow;
         return await _unitOfWork
             .Query<IdempotencyKey>()
-            .Where(i => i.ExpiresAt < now)
+            .Where(i => i.ExpiresAt < now)// .ExecuteDeleteAsync(token) - we can do in now
+           
             .Take(count)
             .ToArrayAsync(token);
     }

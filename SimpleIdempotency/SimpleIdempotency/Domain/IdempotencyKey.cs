@@ -27,7 +27,7 @@
             Namespace = @namespace ?? throw new ArgumentNullException(nameof(@namespace));
             ExpiresAt = expiresAt;
         }
-
+//в принципе .net 8 - можно и через requre + init понтануться
         public string Namespace { get; protected internal set; } = null!;
         public string Key { get; protected internal set; } = null!;
         public string? Payload { get; protected internal set; }

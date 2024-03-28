@@ -10,7 +10,7 @@ namespace SimpleIdempotency.Filters
         private readonly string _namespace;
         private readonly TimeSpan _expiration;
 
-        public IdempotentFilter(IIdempotencyCache idempotencyCache, IConfiguration configuration)
+        public IdempotentFilter(IIdempotencyCache idempotencyCache, IConfiguration configuration) //IConfiguration -> interface for IdempotentConfig
         {
             _idempotencyCache = idempotencyCache;
             _namespace = configuration["IdempotencyNamespace"] ?? throw new ArgumentException("There is no such key in the configuration");
@@ -22,7 +22,7 @@ namespace SimpleIdempotency.Filters
             var idempotencyKey = context.HttpContext.Request.Headers[IdempotencyHeaders.IdempotencyKey].SingleOrDefault();
             var cancellationToken = context.HttpContext.RequestAborted;
 
-            if (idempotencyKey is null)
+            if (idempotencyKey is null) //throw exception here
             {
                 await next();
                 return;

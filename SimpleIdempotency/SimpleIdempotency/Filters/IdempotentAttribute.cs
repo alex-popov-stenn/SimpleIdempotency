@@ -3,7 +3,7 @@ using SimpleIdempotency.Services;
 
 namespace SimpleIdempotency.Filters;
 
-public class IdempotentAttribute : Attribute, IFilterFactory
+public class IdempotentAttribute : Attribute, IFilterFactory //не очень понятно зачем мы пошли через фактори
 {
     public IFilterMetadata CreateInstance(IServiceProvider serviceProvider)
     {
