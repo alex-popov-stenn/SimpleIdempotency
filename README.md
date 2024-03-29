@@ -6,7 +6,7 @@ The idea is to store the response of the API in a database and check if the requ
 
 ## Using
 
-Add two attributes in specified order to controller action.
+1. Add two attributes in specified order to controller action.
 
 ```csharp
 [ApiController]
@@ -35,4 +35,4 @@ public class InvoicesController : ControllerBase
 }
 ```
 
-Send request with attaching custom header **x-idempotency-key**
+2. Send request with attaching custom header **x-idempotency-key**
