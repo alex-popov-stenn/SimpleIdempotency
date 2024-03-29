@@ -36,3 +36,15 @@ public class InvoicesController : ControllerBase
 ```
 
 2. Send request with attaching custom header **x-idempotency-key**
+
+```
+curl -X 'POST' \
+  'https://localhost:7174/Invoices' \
+  -H 'accept: text/plain' \
+  -H 'x-idempotency-key: test-key' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "amount": 150000,
+  "dueDate": "2024-03-28T15:48:43.991Z"
+}'
+```
