@@ -4,6 +4,12 @@ This repostiory contains a very simple implementation of idempotency in API.
 
 The idea is to store the response of the API in a database and check if the request has been made before. If it has been made before, the response is returned from the database.
 
+The whole topic disclosure is located https://dev.to/fairday/techniques-for-building-predictable-and-reliable-api-part-1-45bf
+
+## How it works
+
+![image](https://github.com/alex-popov-stenn/SimpleIdempotency/assets/70567573/3427da45-0f3a-4d47-a0e8-e3697d4e4283)
+
 ## Using
 
 1. Add two attributes in specified order to controller action.
